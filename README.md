@@ -1,22 +1,5 @@
 # welcome-screen
 
-## Starting points
-Delete in App.vue the following lines:
-
-```
-<img alt="Vue logo" src="./assets/logo.png">
-<HelloWorld msg="Welcome to Your Vue.js App"/>
-
-import HelloWorld from './components/HelloWorld.vue'
-
-components: {
-  HelloWorld
-}
-```
-
-and delete the following folder and file in it:
-- components/HelloWorld.vue
-
 ## Project setup
 ```
 npm install
