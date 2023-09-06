@@ -1,13 +1,14 @@
 <script>
 export default {
   name: "App",
-  data() {
-    return {
-      title: "Welcome to Opportunity",
-      sheet_id: import.meta.env.VITE_GOOGLE_SHEET_ID,
-      api_token: import.meta.env.VITE_GOOGLE_API_KEY,
-    };
-  },
+  data() 
+    {
+      return {
+        title: "Welcome to Opportunity",
+        sheet_id: import.meta.env.VITE_GOOGLE_SHEET_ID,
+        api_token: import.meta.env.VITE_GOOGLE_API_KEY,
+      };
+    },
 };
 </script>
 <template>
