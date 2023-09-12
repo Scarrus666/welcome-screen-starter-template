@@ -8,10 +8,44 @@ export default
           title: "Welcome to Opportunity",
           sheet_id: import.meta.env.VITE_GOOGLE_SHEET_ID,
           api_token: import.meta.env.VITE_GOOGLE_API_KEY,
+          entries: 
+            [
+              [
+                  "15:15",
+                  "06.09.2023",
+                  "Pause",
+                  "Opportunity, Räffelstrasse 12"
+              ],
 
+              [
+                  "15:30",
+                  "06.09.2023",
+                  "Start Vue Welcome Screen Project",
+                  "Opportunity, Räffelstrasse 12"
+              ],
 
+              [
+                  "15:35",
+                  "06.09.2023",
+                  "Live Demo Welcome Screen",
+                  "Opportunity, Räffelstrasse 12"
+              ],
+
+              [
+                  "16:00",
+                  "06.09.2023",
+                  "Create a Google API Key",
+                  "Opportunity, Räffelstrasse 12"
+              ]
+            ],
+        // transformedData:[],
         };
       },
+
+      mounted() 
+        {
+          this.getData(); // get first initial data and then wait for the next update
+        },
 
       methods: 
       {
@@ -21,7 +55,7 @@ export default
             const data = await response.json();
             this.entries = data.valueRanges[0].values;
           }
-    }
+    },
   };
 
 
@@ -30,6 +64,7 @@ export default
 <template>
   <div id="app">
     <h1 class="site-title">{{ title }}</h1>
+    
   </div>
 </template>
 
