@@ -96,6 +96,23 @@ export default
           this.entries_new = data.valueRanges[0].values;
 
           console.log('entries: ' + this.entries_new);
+
+
+          // manipulate the fetched data
+          for (let i = 1; i < this.entries_new.length; i++) 
+            {
+              const [time, date, title, description] = this.entries_new[i];
+
+              this.transformedData.push(
+                {
+                  time,
+                  date,
+                  title,
+                  description,
+                }
+              );
+            }
+
         }
     },
 
@@ -110,13 +127,12 @@ export default
     <h1 class="site-title">{{ title }}</h1>
     <h3 class="site-date">{{ currentDate }}</h3>
 
-    <div class="cards">
+    <div class="cards" v-for="card in transformedData" v-if="transformedData">
       <div class="card">
         <ul>
-          <li class="card-time">{{ entries_new[0][0][0] }}</li>
-          <li class="card-title">Title</li>
-          <li class="card-description">Description</li>
-          <li>{{ console.log(console) }}</li>
+          <li class="card-time">{{ card.time }} Uhr</li>
+          <li class="card-title">{{ card.title }}</li>
+          <li class="card-description">{{ card.description }}</li>
         </ul>
       </div>
     </div>
