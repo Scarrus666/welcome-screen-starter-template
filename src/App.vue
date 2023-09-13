@@ -9,6 +9,9 @@ export default
           currentDate: new Date().toLocaleDateString("en-CH"), 
           sheet_id: import.meta.env.VITE_GOOGLE_SHEET_ID,
           api_token: import.meta.env.VITE_GOOGLE_API_KEY,
+          entries_new: [],
+          entries_test: "",
+          transformedData: [],
           entries: 
             [
               [
@@ -51,33 +54,52 @@ export default
                 "12.09.2023",
                 "Persönliche Präsentation (Mia)",
                 "extern"
-              ]
+              ],
 
               [
                 "08:30",
                 "13.09.2023",
                 "Testtitel",
                 "extern"
-              ]
+              ],
             ],
+
+         
         // transformedData:[],
         };
       },
 
-      mounted() 
+    computed:
+    {
+      gsheet_url() 
         {
-          this.getData(); // get first initial data and then wait for the next update
+          //return `https://sheets.googleapis.com/v4/spreadsheets/${this.sheet_id}/values:batchGet?ranges=A1%3AE100&valueRenderOption=FORMATTED_VALUE&key=${this.api_token}`;
+          return `https://sheets.googleapis.com/v4/spreadsheets/${this.sheet_id}/values:batchGet?ranges=A1%3AE100&valueRenderOption=FORMATTED_VALUE&key=${this.api_token}`;
         },
 
-      methods: 
-      {
-        async getData()  
-          {
-            const response = await fetch(this.gsheet_url);
-            const data = await response.json();
-            this.entries = data.valueRanges[0].values;
-          }
+/*         console: () => console,
+      window: () => window, */
     },
+
+    mounted() 
+      {
+        this.getData(); // get first initial data and then wait for the next update
+      },
+
+    methods: 
+    {
+      async getData()  
+        {
+          const response = await fetch(this.gsheet_url);
+
+          const data = await response.json();
+          this.entries_new = data.valueRanges[0].values;
+
+          console.log('entries: ' + this.entries_new);
+        }
+    },
+
+
   };
 
 
@@ -91,9 +113,10 @@ export default
     <div class="cards">
       <div class="card">
         <ul>
-          <li class="card-time">{{ entries[0] }}</li>
+          <li class="card-time">{{ entries_new[0][0][0] }}</li>
           <li class="card-title">Title</li>
           <li class="card-description">Description</li>
+          <li>{{ console.log(console) }}</li>
         </ul>
       </div>
     </div>
@@ -101,7 +124,7 @@ export default
   </div>
 
   <footer>
-    <div id="footerLogos">
+    <div id="footer-logos">
       <img src="./assets/STZH_SEB_Logo.png" class="logoSTZ">
       <img src="./assets/Opportunity.png" class="logoOpprt">
       <img src="./assets/SAG_Logo_De.png" class="logoSAG">
@@ -191,7 +214,7 @@ ul
   color: lightcoral;
 }
 
-#footerLogos
+#footer-logos
 {
   display: flex;
   flex-direction: row;
