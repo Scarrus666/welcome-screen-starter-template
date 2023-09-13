@@ -6,6 +6,7 @@ export default
       {
         return {
           title: "Welcome to Opportunity",
+          currentDate: new Date().toLocaleDateString("en-CH"), 
           sheet_id: import.meta.env.VITE_GOOGLE_SHEET_ID,
           api_token: import.meta.env.VITE_GOOGLE_API_KEY,
           entries: 
@@ -64,8 +65,27 @@ export default
 <template>
   <div id="app">
     <h1 class="site-title">{{ title }}</h1>
-    
+    <h3 class="site-date">{{ currentDate }}</h3>
+
+    <div class="cards">
+      <div class="card">
+        <ul>
+          <li class="card-time">Date</li>
+          <li class="card-title">Title</li>
+          <li class="card-description">Description</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
+
+  <footer>
+    <div id="footerLogos">
+      <img src="./assets/STZH_SEB_Logo.png" class="logoSTZ">
+      <img src="./assets/Opportunity.png" class="logoOpprt">
+      <img src="./assets/SAG_Logo_De.png" class="logoSAG">
+    </div>
+  </footer>
 </template>
 
 <style scoped>
@@ -76,19 +96,62 @@ export default
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #323d4a;
-  background-color: lightcyan;
-  margin: 60px;
-  font-size: 62px;
+  margin: 80px;
+}
+
+.cards
+{
+  display: flex;
+  justify-content: center;
 }
 .card
 {
-  background-color: darkblue;
+  width: 960px;
+  height: 182px;
+  background-color: #0F05A0;
   padding: 10px;
   margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+ul
+{
+  list-style-type: none;
+}
+
+.card-time
+{
+  color: #EB5E00;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.card-title
+{
+  color: #FFBFAB;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.card-description
+{
+  color: #FFBFAB;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.site-title
+{
+  color: #323D4A;
+  font-size: 62px;
+  font-weight: 900;
 }
 .site-date
 {
-  color: grey;
+  color: #9AA7B1;
+  font-size: 62px;
+  font-weight: 500;
 }
 .timeStamp
 {
@@ -112,13 +175,33 @@ export default
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   margin: 10px;
-  color: darkblue;
+  height: 100px;
 }
-.logosSponsors
+
+.logoSTZ
 {
-  width: 200px;
-  height: 50px;
+  width: 230px;
+  height: 44px;
+}
+
+.logoOpprt
+{
+  width: 296px;
+  height: 55px; 
+}
+
+.logoSAG
+{
+  width: 273px;
+  height: 52px;
+}
+
+.logoSTZ, .logoOpprt, .logoSAG 
+{
+  vertical-align: middle;
+  max-height: 100%;
 }
 
 footer 
@@ -126,7 +209,8 @@ footer
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  height: 130px;
+  background-color: #FFFFFF;
 }
 
 </style>
