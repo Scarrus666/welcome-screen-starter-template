@@ -12,31 +12,52 @@ export default
           entries: 
             [
               [
-                  "15:15",
-                  "06.09.2023",
-                  "Pause",
-                  "Opportunity, Räffelstrasse 12"
+                "15:15",
+                "06.09.2023",
+                "Pause",
+                "Opportunity, Räffelstrasse 12"
               ],
 
               [
-                  "15:30",
-                  "06.09.2023",
-                  "Start Vue Welcome Screen Project",
-                  "Opportunity, Räffelstrasse 12"
+                "15:30",
+                "06.09.2023",
+                "Start Vue Welcome Screen Project",
+                "Opportunity, Räffelstrasse 12"
               ],
 
               [
-                  "15:35",
-                  "06.09.2023",
-                  "Live Demo Welcome Screen",
-                  "Opportunity, Räffelstrasse 12"
+                "15:35",
+                "06.09.2023",
+                "Live Demo Welcome Screen",
+                "Opportunity, Räffelstrasse 12"
               ],
 
               [
-                  "16:00",
-                  "06.09.2023",
-                  "Create a Google API Key",
-                  "Opportunity, Räffelstrasse 12"
+                "16:00",
+                "06.09.2023",
+                "Create a Google API Key",
+                "Opportunity, Räffelstrasse 12"
+              ],
+
+              [
+                "13:30",
+                "07.09.2023",
+                "Create a Google API Key",
+                "Opportunity, Räffelstrasse"
+              ],
+
+              [
+                "08:30",
+                "12.09.2023",
+                "Persönliche Präsentation (Mia)",
+                "extern"
+              ]
+
+              [
+                "08:30",
+                "13.09.2023",
+                "Testtitel",
+                "extern"
               ]
             ],
         // transformedData:[],
@@ -70,7 +91,7 @@ export default
     <div class="cards">
       <div class="card">
         <ul>
-          <li class="card-time">Date</li>
+          <li class="card-time">{{ entries[0] }}</li>
           <li class="card-title">Title</li>
           <li class="card-description">Description</li>
         </ul>
