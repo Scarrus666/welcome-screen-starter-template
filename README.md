@@ -1,5 +1,5 @@
-# Page preview
-![My Page](https://welcome-screen-starter-template-7ib7.vercel.app)
+# My Page
+[Link](https://welcome-screen-starter-template-7ib7.vercel.app)
 
 # welcome-screen
 ![153706334-54de2f43-eca6-43a0-9666-c3634184bf7d](https://github.com/opportunity-zh/welcome-screen-starter-template/assets/144212256/f90d34c3-c10c-4475-9085-f52d5922c6d9)
