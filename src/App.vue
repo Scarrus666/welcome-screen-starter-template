@@ -155,7 +155,8 @@ export default
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #323d4a;
-  margin: 80px;
+  margin: 0; /* Set margin to 0 */
+  padding: 0; /* Set padding to 0 */
   min-height: 100vh;
 }
 
