@@ -1,4 +1,11 @@
 body
 {
     background-color: #E8EFF4;
+    padding: 0%;
+}
+
+template
+{
+    width: 100%;
+    height: 100%;
 }

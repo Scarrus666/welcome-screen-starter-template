@@ -136,7 +136,6 @@ export default
         </ul>
       </div>
     </div>
-
   </div>
 
   <footer>
@@ -157,6 +156,12 @@ export default
   -moz-osx-font-smoothing: grayscale;
   color: #323d4a;
   margin: 80px;
+  min-height: 100vh;
+}
+
+main 
+{
+  flex-grow: 1; /* Allow the main content to grow and take remaining space */
 }
 
 .cards
@@ -266,11 +271,63 @@ ul
 
 footer 
 {
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
+  margin: 0;
   width: 100%;
   height: 130px;
   background-color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) 
+{
+  /* Styles for screens up to 768px wide (typical tablet size) */
+  #app 
+  {
+    margin: 20px; /* Adjust the margin for smaller screens */
+  }
+  
+  .card 
+  {
+    width: 100%; /* Make cards take full width on smaller screens */
+  }
+  
+  /* Adjust font sizes, padding, or any other styles as needed */
+
+  footer 
+  {
+    height: auto; /* Allow the footer to adjust its height */
+  }
+  
+  #footer-logos 
+  {
+    flex-direction: row; /* Stack logos vertically on smaller screens */
+    align-items: center; /* Center align logos */
+    margin: 10px;
+  }
+  
+  .logoSTZ, .logoOpprt, .logoSAG 
+  {
+    width: auto; /* Allow logos to scale based on content */
+    height: auto; /* Allow logos to scale based on content */
+    max-width: 25%; /* Ensure logos don't exceed container width */
+  }
+}
+
+@media screen and (max-width: 480px) 
+{
+  /* Styles for screens up to 480px wide (typical mobile size) */
+  .site-title 
+  {
+    font-size: 36px; /* Reduce the font size for the site title */
+  }
+  
+  .site-date 
+  {
+    font-size: 36px; /* Reduce the font size for the date */
+  }
+
 }
 
 </style>
