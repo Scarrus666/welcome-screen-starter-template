@@ -1,5 +1,5 @@
 # Logs
-.env
+# .env Disabled for DEV Purposes
 .vscode
 logs
 *.log
